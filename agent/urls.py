@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-	path('agent/', views.agent, name = 'agent'),
+	path('', views.agent, name = 'agent'),
 
 ]
