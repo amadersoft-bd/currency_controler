@@ -13,15 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.conf.urls import include
 from django.contrib import admin
-from django.urls import path, include
-from django.views.generic import RedirectView
+
+from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('organization.urls')),
-    
-
+    path('',include('organization.urls')),
+    path('profile/', include('user_profile.urls')),
+    path('agent/', include('agent.urls')),
+    path('account/', include('account.urls')),
+    path('user_admin/', include('user_admin.urls')),
     
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
