@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 # Create your views here.
-def user_admin(request):
+def admin_dashboard(request):
 
-	return render(request, 'admin/user_admin/user_admin.html')
+	return render(request, 'admin/admin_index.html')
