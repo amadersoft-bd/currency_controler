@@ -1,0 +1,118 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+<!-- Code Written By Wridoy -->
+<style>
+    @media (min-width: 576px) {
+        .heading77 {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .heading77 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .heading77 {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .heading77 {
+            font-size: 2rem;
+        }
+    }
+
+    /* 
+    * {
+        margin: 0;
+        padding: 0;
+    } */
+
+    /* body{ font-size: 20px;}  */
+    .banner {
+        position: relative;
+        width: 100%;
+        margin: 0
+    }
+
+    .heading77 {
+        color: White;
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+</style>
+
+<div class="banner">
+    <img width="100%" height="250" src="{% static 'app-assets/images/slider/downlink.jpg' %}" style="width:100%;">
+    <h2 class="heading77">
+        Add Balance
+    </h2>
+</div>
+
+
+<div class="container-fluid pt-5">
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-5">
+            <div class="card rounded " style="height: auto;">
+                <div class="card-content ">
+                    <div class="card-body pt-5 pb-5 ">
+                        <h5 style="color: #2dcee3 !important" class="text-center card-title"> Bitcoin logo </h5>
+                      
+                        <h5 style="color: #2dcee3 !important" class="pt-3 text-center card-title"> Please Send Your Money Follwing Bitcoin Id</h5>
+                      
+                        <h3 class="border-info rounded" > kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</h3>
+
+                        <p class="pt-3 text-center"> 
+                            After Complete Your Payment, Please Give Us Your Payment Information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card rounded " style="height: auto;">
+                <div class="card-content ">
+                    <div class="card-body pt-5 pb-5 ">
+                        <div class="form-group">
+                            <label class="align-right" for="account_id">Account Id </label>
+                            <input class="form-control border-info" type="text" placeholder="Account Id" id="userinput5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="btc_address">BTC Address</label>
+                            <input class="form-control border-info" type="text" placeholder="BTC Address" id="userinput5">
+                        </div>
+                        <div class="form-group">
+                            <label for="Send_balence">Send Balance </label>
+                            <input class="form-control border-info" type="text" placeholder="Send Balance" id="userinput5">
+                        </div>
+                        <div class="form-group">
+                            <label for="transection_id">Transection Id </label>
+                            <input class="form-control border-info" type="text" placeholder="Transection Id" id="userinput5">
+                        </div>
+                        <button style="float:right;" type="button" class="btn btn-info round btn-min-width mr-1"> Submit  </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+</div>
+
+<!-- End Card Design  -->
+{% endblock %}
