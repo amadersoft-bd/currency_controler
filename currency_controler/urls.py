@@ -26,7 +26,7 @@ urlpatterns = [
     path('profile/', include('user_profile.urls')),
     path('agent/', include('agent.urls')),
     path('account/', include('account.urls')),
-    path('user_admin/', include('user_admin.urls')),
+    path('smadmin/', include('user_admin.urls')),
     
 ]
 
