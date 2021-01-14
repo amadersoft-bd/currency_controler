@@ -28,7 +28,7 @@ SECRET_KEY = 'u=15gio8nm-woe&z-$7ih^d!d5ls=u2va@3kj8v*8046j-$4y2'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+AUTH_PROFILE_MODULE = 'user_profile.Profile'
 
 # Application definition
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'organization',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,16 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+
+#email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mdimranhossain0066@gmail.com'
+EMAIL_HOST_PASSWORD = 'ghost22boy#'
+
+
+
