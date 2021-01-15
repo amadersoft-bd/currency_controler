@@ -32,24 +32,26 @@ def update_profile(request):
 	if request.method == "POST":
 		
 		try:
-			#user = User.objects.get(username=request.POST['username'],email = request.POST['email'])
+			profile = Profile.objects.get(id=12)
 			
 		
 			#user = User.objects.get(username = request.POST['username'],email = request.POST['email'])
 			full_name = request.POST.get('full_name')
 			address = request.POST.get('address')
 			country = request.POST.get('country')
-			tnx_no = create_new_ref_number() #request.POST.get('tnx_no')
-			agent_id =Agent.objects.get(id=2) #request.POST.get('agent_id')
+			#tnx_no = create_new_ref_number() #request.POST.get('tnx_no')
+			 #request.POST.get('agent_id')
 				#package_id =Package.objects.get(id)
 			photo = request.FILES.get('photo')	
-			pk_id = request.POST.get('package_name')
-			package_id =Package.objects.get(id=pk_id)
-			print(package_id)
+			#pk_id = request.POST.get('package_name')
+			#package_id =Package.objects.get(id=pk_id)
+			#print(package_id)
 
 			mobile_no = request.POST.get('mobile_no')
 			birth_date = request.POST.get('birth_date')
-			profile = Profile(full_name=full_name,photo=photo,agent_id=agent_id,package_id =package_id,tnx_no=tnx_no,address=address,country=country,mobile_no=mobile_no,birth_date=birth_date, )
+			#profile = Profile(full_name=full_name,photo=photo,address=address,country=country,mobile_no=mobile_no,birth_date=birth_date, )
+			profile.full_name=full_name
+			profile.address = address
 				
 			profile.save()
 			return render(request, 'users/user_profile/profile.html')
