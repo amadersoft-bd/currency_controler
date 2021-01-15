@@ -83,6 +83,8 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/charts/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/forms/icheck/icheck.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/charts/jquery.sparkline.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/extensions/jquery.knob.min.js' %}"></script>
@@ -95,6 +97,7 @@
     <script src="{% static 'app-assets/vendors/js/charts/chart.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/charts/jquery.sparkline.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/extensions/unslider-min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/charts/apexcharts/apexcharts.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/colors/palette-climacon.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/fonts/simple-line-icons/style.min.css' %}">
     <!-- END: Page Vendor JS-->
@@ -107,6 +110,18 @@
     <!-- BEGIN: Page JS-->
     <script src="{% static 'app-assets/js/scripts/ui/breadcrumbs-with-stats.js' %}"></script>
     <script src="{% static 'app-assets/js/scripts/pages/dashboard-analytics.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
+    <script src='swiper.min.js'></script>
+
+    
+     <!-- BEGIN: Content-->
+     {% block custom_script %}
+    
+     {% endblock custom_script %}
+    
+     <!-- END: Content-->
+
     <!-- END: Page JS-->
 
 </body>
