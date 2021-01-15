@@ -22,24 +22,26 @@
             />
           </div>
           <div class="card-body container-fluid">
-            <h3 class="card-title text-center">Jhon Smith</h3>
+            <h3 class="card-title text-center">{{user.profile.full_name}}</h3>
             <div class="row">
               <div class="col-lg-2 col-md-2"></div>
-
+           {% if user.is_authenticated %}
               <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 id="user_tpye">Member</h6>
-                <h6 id="user_id">smith123</h6>
-                <h6 id="user_tpye">05-01-2021</h6>
-                <h6 id="user_id">Primium</h6>
-                <h6 id="user_tpye">jhon@gmail.com</h6>
+                <h6 id="user_id">{{user.username}}</h6>
+                <h6 id="user_tpye">{{user.profile.created_date}}</h6>
+                <h6 id="user_tpye">{{user.profile.birth_date}}</h6>
+                <h6 id="user_id">{{user.profile.package_id}}</h6>
+                <h6 id="user_tpye">{{user.profile.email}}</h6>
               </div>
               <div class="col-lg-1 col-md-1"></div>
               <div class="col-lg-4 col-md-4 col-sm-12">
-                <h6 id="user_id">017123456789</h6>
-                <h6 id="user_tpye">Dhaka,Bangladesh</h6>
-                <h6 id="user_id">Bangladesh</h6>
-                <h6 id="tnx_number">TNX Number</h6>
+                <h6 id="user_id">{{user.profile.mobile_no}}</h6>
+                <h6 id="user_tpye">{{user.profile.address}},{{user.profile.country}}</h6>
+                <h6 id="user_id">{{user.profile.country}}</h6>
+                <h6 id="tnx_number">{{user.profile.tnx_no}}</h6>
               </div>
+               {% endif %} 
             </div>
           </div>
         </div>
