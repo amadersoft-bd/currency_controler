@@ -28,17 +28,18 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body pt-0">
-                                        <form class="form-horizontal" action="index.html">
+                                        <form class="form-horizontal" action="" method="POST">
+                                        {% csrf_token %}
                                             <fieldset class="form-group floating-label-form-group">
                                                 <label for="user-name">Your Username</label>
                                                 <input type="text" class="form-control" id="user-name"
-                                                    placeholder="Your Username">
+                                                   name="username" placeholder="Your Username">
 
                                             </fieldset>
                                             <fieldset class="form-group floating-label-form-group mb-1">
                                                 <label for="user-password">Enter Password</label>
                                                 <input type="password" class="form-control" id="user-password"
-                                                    placeholder="Enter Password">
+                                                   name="password"  placeholder="Enter Password">
                                                   
                                             </fieldset>
                                             <div class="form-group row">
