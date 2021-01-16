@@ -207,10 +207,10 @@
                 <ul class="dropdown-menu">
                     <li data-menu=""><a class="dropdown-item" href="{% url 'balance_add' %}" data-i18n="Email Application" data-toggle="dropdown"> Balance Add</a>
                     </li>
-                    <li data-menu=""><a class="dropdown-item" href="app-email.html" data-i18n="Email Application" data-toggle="dropdown">Balance Withdraw</a>
-                    </li>
-                    <li data-menu=""><a class="dropdown-item" href="app-email.html" data-i18n="Email Application" data-toggle="dropdown">Balance Transfer</a>
-                    </li>
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'balance_withdrow' %}" data-i18n="Email Application" data-toggle="dropdown">Balance Withdraw</a>
+                    </li> 
+                    <li data-menu=""><a class="dropdown-item" href="{% url 'balance_transfer' %} " data-i18n="Email Application" data-toggle="dropdown">Balance Transfer</a>
+                    </li> 
                     
                     <!-- <li data-menu=""><a class="dropdown-item" href="app-kanban.html" data-i18n="Kanban Application" data-toggle="dropdown">Kanban Application</a>
                     </li>
