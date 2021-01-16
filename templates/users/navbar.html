@@ -1,11 +1,12 @@
 {% load static %}
+
 <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-static-top navbar-light navbar-border navbar-brand-center">
     <div class="navbar-wrapper">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="feather icon-menu font-large-1"></i></a></li>
                 <li class="nav-item"><a class="navbar-brand" href="#"><img class="brand-logo" alt="stack admin logo" src="{% static 'app-assets/images/logo/stack-logo.png' %}">
-                    <h2 class="brand-text">XYZ ORG</h2>
+                    <h2 class="brand-text">iTrader Uk</h2>
                     </a></li>
                 <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
             </ul>
@@ -182,14 +183,20 @@
                         </ul>
                     </li> -->
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <div class="avatar avatar-online"><img src="{% static 'app-assets/images/portrait/small/avatar-s-1.png' %}" alt="avatar"><i></i></div><span class="user-name">SK Rayhan</span>
+                            <div class="avatar avatar-online"><img src="{% static 'app-assets/images/portrait/small/avatar-s-1.png' %}" alt="avatar"><i></i></div><span class="user-name">{{user.profile.full_name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="user-profile.html"><i class="feather icon-user"></i> Edit Profile</a>
+                            
                             <!-- <a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a> -->
                             <!-- <a class="dropdown-item" href="user-cards.html"><i class="feather icon-check-square"></i> Task</a> -->
                             <!-- <a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a> -->
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="login-with-bg-image.html"><i class="feather icon-power"></i> Logout</a>
+                            {% if user.is_authenticated %}
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="{% url 'logout' %}"><i class="feather icon-power"></i> Logout</a>
+                       <a class="dropdown-item" href="{% url 'update_profile' %}"><i class="feather icon-user"></i> Edit Profile</a>
+                       {% else %}
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="{% url 'login' %}"><i class="feather icon-power"></i> Log In</a>
+                        {% endif %} 
+                       
                         </div>
                     </li>
                 </ul>

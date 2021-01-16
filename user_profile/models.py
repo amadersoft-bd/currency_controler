@@ -27,7 +27,7 @@ class Profile(models.Model):
     mobile_no = models.CharField(max_length=20,null=True,blank=True)
     tnx_no =  models.CharField(max_length = 10,editable=False,null=True,blank=True)    
     package_id = models.ForeignKey(Package, on_delete=models.CASCADE)
-    #sponsor_id = models.ForeignKey(Sponsor, on_delete=models.CASCADE)
+    sponsor_id = models.TextField(max_length=200,null=True,blank=True)
     agent_id = models.ForeignKey("agent.Agent", on_delete=models.CASCADE,null=True,blank=True)
     user_position_status = models.ForeignKey(UsePositionStatus,null=True,blank=True, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)

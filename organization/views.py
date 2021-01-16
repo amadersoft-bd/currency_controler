@@ -8,19 +8,19 @@ def home(request):
     # return render(request, 'landing/index.html') 
 
 
-def login(request):
+# def login(request):
     
-    return render(request, 'users/account/login.html')
+#     return render(request, 'users/account/login.html')
 
 
-def registration(request):
-    return render(request, 'users/account/registration.html')
+# def registration(request):
+#     return render(request, 'users/account/registration.html')
 
-def update_profile(request):
-    return render(request, 'users/user_profile/update_profile.html')
+# def update_profile(request):
+#     return render(request, 'users/user_profile/update_profile.html')
 
-def profile(request):
-    return render(request, 'users/user_profile/profile.html')
+# def profile(request):
+#     return render(request, 'users/user_profile/profile.html')
 
 def downline_link(request):
     return render(request, 'users/user_profile/downline_network.html')

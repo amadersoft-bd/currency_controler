@@ -14,65 +14,69 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def profile(request):
 
-	profile_data = Profile.objects.get(user=request.user)
-	context = {
-		'profile_data': profile_data,
-	}
-	return render(request, 'users/user_profile/profile_test.html',context)
-def edit_profile(request):
-	# profile_data = Profile.objects.get(user__id=request.user.id)
-	# package_id = Package.objects.all()
-	
-	# if request.method == "POST":
-	# 	#profile_form = UserProfileForm(request.POST)
-	# 	if request.POST['password'] == request.POST['password2']:
-	# 		try:
-	# 			user = User.objects.get(username=request.POST['username'])
-	# 			return render(request, 'users/user_profile/signup.html',{'error': "username has already taken"})
-	# 		except User.DoesNotExist:
-	# 			user = User.objects.create_user(username = request.POST['username'],email = request.POST['email'],password=request.POST['password'])
-	# 			full_name = request.POST.get('full_name')
-	# 			address = request.POST.get('address')
-	# 			country = request.POST.get('country')
-	# 			tnx_no = create_new_ref_number() #request.POST.get('tnx_no')
-	# 			agent_id =Agent.objects.get(id=2) #request.POST.get('agent_id')
-	# 			#package_id =Package.objects.get(id)
-	# 			photo = request.POST.get('photo')
-	# 			birth_date = request.POST.get('birth_date')
-	# 			pk_id = request.POST.get('package_name')
-	# 			package_id =Package.objects.get(id=pk_id)
-	# 			print(package_id)
+	# profile_data = Profile.objects.get(user=request.user)
+	# context = {
+	# 	'profile_data': profile_data,
+	# }
+	return render(request, 'users/user_profile/profile.html')
 
-	# 			mobile_no = request.POST.get('mobile_no')
-	# 			birth_date = request.POST.get('birth_date')
-	# 			profile = Profile(full_name=full_name,photo=photo,agent_id=agent_id,package_id =package_id,tnx_no=tnx_no,address=address,country=country,mobile_no=mobile_no,birth_date=birth_date, user=user)
-				
-	# 			profile.save()
-				
-			
-	# 			#auth.login(request,user)
-	# 			return render(request, 'users/user_profile/profile.html')
 
-	# 	else:
-	# 		return render(request, 'users/user_profile/profile.html')
+
+
+
+
+def update_profile(request):
+	#selected_package = None
+	package_id = Package.objects.all()
 	
-	
-	# else:
-	# 	#return render(request, 'users/user_profile/signup.html')
+	if request.method == "POST":
 		
-	# 	context ={
-	# 		     #'selected_package':selected_package,
-	# 			 'profile_data':profile_data,
-	# 			 'package_id': package_id,
-	# 				}
-	return render(request, 'users/user_profile/edit_profile.html')
+		try:
+			profile = Profile.objects.get(id=12)
+			
+		
+			#user = User.objects.get(username = request.POST['username'],email = request.POST['email'])
+			full_name = request.POST.get('full_name')
+			address = request.POST.get('address')
+			country = request.POST.get('country')
+			#tnx_no = create_new_ref_number() #request.POST.get('tnx_no')
+			 #request.POST.get('agent_id')
+				#package_id =Package.objects.get(id)
+			photo = request.FILES.get('photo')	
+			#pk_id = request.POST.get('package_name')
+			#package_id =Package.objects.get(id=pk_id)
+			#print(package_id)
+
+			mobile_no = request.POST.get('mobile_no')
+			birth_date = request.POST.get('birth_date')
+			#profile = Profile(full_name=full_name,photo=photo,address=address,country=country,mobile_no=mobile_no,birth_date=birth_date, )
+			profile.full_name=full_name
+			profile.address = address
+				
+			profile.save()
+			return render(request, 'users/user_profile/profile.html')
+		except User.DoesNotExist:		
+			
+				#auth.login(request,user)
+				#return render(request, 'users/user_profile/signup.html')
+			return render(request, 'users/user_profile/update_profile.html')
+
+	else:
+		context ={
+			     #'selected_package':selected_package,
+			'package_id': package_id,
+					}
+		return render(request, 'users/user_profile/update_profile.html',context)
+	
+	
+
 	
 
 
 
 
 
-def signup(request):
+def registration(request):
 	#selected_package = None
 	package_id = Package.objects.all()
 	
@@ -81,7 +85,7 @@ def signup(request):
 		if request.POST['password'] == request.POST['password2']:
 			try:
 				user = User.objects.get(username=request.POST['username'])
-				return render(request, 'users/user_profile/signup.html',{'error': "username has already taken"})
+				return render(request, 'users/account/registration.html',{'error': "username has already taken"})
 			except User.DoesNotExist:
 				user = User.objects.create_user(username = request.POST['username'],email = request.POST['email'],password=request.POST['password'])
 				full_name = request.POST.get('full_name')
@@ -90,23 +94,24 @@ def signup(request):
 				tnx_no = create_new_ref_number() #request.POST.get('tnx_no')
 				agent_id =Agent.objects.get(id=2) #request.POST.get('agent_id')
 				#package_id =Package.objects.get(id)
-				
+				sponsor_id = request.POST.get('sponsor_id')
 				pk_id = request.POST.get('package_name')
 				package_id =Package.objects.get(id=pk_id)
 				print(package_id)
 
 				mobile_no = request.POST.get('mobile_no')
 				birth_date = request.POST.get('birth_date')
-				profile = Profile(full_name=full_name,agent_id=agent_id,package_id =package_id,tnx_no=tnx_no,address=address,country=country,mobile_no=mobile_no,birth_date=birth_date, user=user)
+				profile = Profile(full_name=full_name,agent_id=agent_id,sponsor_id=sponsor_id,package_id =package_id,tnx_no=tnx_no,address=address,country=country,mobile_no=mobile_no,birth_date=birth_date, user=user)
 				
 				profile.save()
 				
 			
 				#auth.login(request,user)
-				return render(request, 'users/user_profile/signup.html')
+				#return render(request, 'users/user_profile/signup.html')
+				return render(request, 'users/account/registration.html')
 
 		else:
-			return render(request, 'users/user_profile/signup.html')
+			return render(request, 'users/account/registration.html')
 	
 	
 	else:
@@ -116,7 +121,7 @@ def signup(request):
 			     #'selected_package':selected_package,
 				 'package_id': package_id,
 					}
-		return render(request, 'users/user_profile/signup.html',context)
+		return render(request, 'users/account/registration.html',context)
 
 
 
@@ -129,14 +134,18 @@ def login(request):
 		user = auth.authenticate(username=username,password=password)
 		if user is not None:
 		#if not request.user.is_authenticated:
-			profiles_data = Profile.objects.filter(user=request.user)
+			
 			auth.login(request, user)
 			
 			print("submitted")
-			return render(request, 'users/user_profile/profile_test.html',{'profiles_data':profiles_data,})
+			return render(request, 'users/user_profile/profile.html')
 		else:
-			return render(request,'users/user_profile/login.html')
+			return render(request,'users/account/login.html')
 
 	else:
-		return render(request,'users/user_profile/login.html')
-		
+		return render(request,'users/account/login.html')
+
+
+def logout(request):
+	auth.logout(request)
+	return render(request, 'users/index.html')

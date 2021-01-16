@@ -11,7 +11,7 @@
     <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title> {% block title %} XYZ AGENCY {% endblock title %} </title>
+    <title> {% block title %} iTrader Uk {% endblock title %} </title>
     <link rel="apple-touch-icon" href="{% static 'app-assets/images/ico/apple-icon-120.png' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'app-assets/images/ico/favicon.ico' %} ">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i' %}" rel="stylesheet">
@@ -86,6 +86,8 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/charts/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/forms/icheck/icheck.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/charts/jquery.sparkline.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/extensions/jquery.knob.min.js' %}"></script>
@@ -98,6 +100,7 @@
     <script src="{% static 'app-assets/vendors/js/charts/chart.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/charts/jquery.sparkline.min.js' %}"></script>
     <script src="{% static 'app-assets/vendors/js/extensions/unslider-min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/charts/apexcharts/apexcharts.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/colors/palette-climacon.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/fonts/simple-line-icons/style.min.css' %}">
     <script src="{% static 'app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js' %}"></script>
@@ -116,6 +119,18 @@
     <!-- BEGIN: Page JS-->
     <script src="{% static 'app-assets/js/scripts/ui/breadcrumbs-with-stats.js' %}"></script>
     <script src="{% static 'app-assets/js/scripts/pages/dashboard-analytics.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
+    <script src='swiper.min.js'></script>
+
+    
+     <!-- BEGIN: Content-->
+     {% block custom_script %}
+    
+     {% endblock custom_script %}
+    
+     <!-- END: Content-->
+
     <!-- END: Page JS-->
 
 </body>

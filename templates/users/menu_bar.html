@@ -5,7 +5,10 @@
     <div class="navbar-container main-menu-content container center-layout" data-menu="menu-container">
         <!-- include ../../../includes/mixins-->
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="{% url 'dash_board' %}" data-toggle="dropdown"><i class="feather icon-home"></i><span data-i18n="Dashboard">Dashboards</span></a>
+            <li class=" nav-item" data-menu="dropdown">
+                <a class="nav-link" href="{% url 'home' %}"><i class="feather icon-home"></i><span data-i18n="Dashboard">Dashboards</span>
+                
+                </a>
             </li>
 
             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="feather icon-users"></i><span data-i18n="Dashboard">Profile</span></a>
@@ -204,10 +207,10 @@
                 <ul class="dropdown-menu">
                     <li data-menu=""><a class="dropdown-item" href="{% url 'balance_add' %}" data-i18n="Email Application" data-toggle="dropdown"> Balance Add</a>
                     </li>
-                    <li data-menu=""><a class="dropdown-item" href="{% url 'balance_withdrow' %}" data-i18n="Email Application" data-toggle="dropdown">Balance Withdraw</a>
-                    </li>
-                    <li data-menu=""><a class="dropdown-item" href="{% url 'balance_transfer' %} " data-i18n="Email Application" data-toggle="dropdown">Balance Transfer</a>
-                    </li>
+                    {% comment %} <li data-menu=""><a class="dropdown-item" href="{% url 'balance_withdrow' %}" data-i18n="Email Application" data-toggle="dropdown">Balance Withdraw</a>
+                    </li> {% endcomment %}
+                    {% comment %} <li data-menu=""><a class="dropdown-item" href="{% url 'balance_transfer' %} " data-i18n="Email Application" data-toggle="dropdown">Balance Transfer</a>
+                    </li> {% endcomment %}
                     
                     <!-- <li data-menu=""><a class="dropdown-item" href="app-kanban.html" data-i18n="Kanban Application" data-toggle="dropdown">Kanban Application</a>
                     </li>
