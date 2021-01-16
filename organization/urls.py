@@ -15,5 +15,10 @@ urlpatterns = [
     path('balance_add/',views.balance_add, name='balance_add'),
     path('balance_withdrow/',views.balance_withdrow, name='balance_withdrow'),
     path('balance_transfer/',views.balance_transfer, name='balance_transfer'),
+    path('holdline_list7/',views.holdline_list7, name='holdline_list7'),
+    path('pakage_line_member7/',views.pakage_line_member7, name='pakage_line_member7'),
+    path('agent_list7/',views.agent_list7, name='agent_list7'),
+    path('new_member7/',views.new_member7, name='new_member7'),
+    path('add_member7/',views.add_member7, name='add_member7'),
 
     ]
