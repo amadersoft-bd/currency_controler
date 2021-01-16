@@ -13,5 +13,7 @@ urlpatterns = [
     path('exchange_reports/',views.exchange_reports, name='exchange_reports'),
     path('transfer_reports/',views.transfer_reports, name='transfer_reports'),
     path('balance_add/',views.balance_add, name='balance_add'),
-   
+    path('balance_withdrow/',views.balance_withdrow, name='balance_withdrow'),
+    path('balance_transfer/',views.balance_transfer, name='balance_transfer'),
+
     ]
