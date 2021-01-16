@@ -79,8 +79,9 @@
     <!-- BEGIN: Footer-->
     {% include 'users/footer.html' %}
     <!-- END: Footer-->
+    
 
-
+    
     <!-- BEGIN: Vendor JS-->
     <script src="{% static 'app-assets/vendors/js/vendors.min.js' %}"></script>
     <!-- BEGIN Vendor JS-->
@@ -103,11 +104,11 @@
     <script src="{% static 'app-assets/vendors/js/charts/apexcharts/apexcharts.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/colors/palette-climacon.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/fonts/simple-line-icons/style.min.css' %}">
-    <script src="{% static 'app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js' %}"></script>
-    <script src="{% static 'app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js' %}"></script>
-    <script src="{% static 'app-assets/js/scripts/tables/datatables/datatable-advanced.js' %}"></script>
+    
 
-    <script src="{% static 'app-assets/js/scripts/tables/datatables/datatable-advanced.min.js' %}"></script>
+    <script src="{% static 'app-assets/vendors/js/tables/datatable/datatables.min.js' %}"></script>
+
+
     
     <!-- END: Page Vendor JS-->
 
@@ -119,19 +120,16 @@
     <!-- BEGIN: Page JS-->
     <script src="{% static 'app-assets/js/scripts/ui/breadcrumbs-with-stats.js' %}"></script>
     <script src="{% static 'app-assets/js/scripts/pages/dashboard-analytics.js' %}"></script>
-    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
-    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
+   
+   
     <script src='swiper.min.js'></script>
 
     
-     <!-- BEGIN: Content-->
-     {% block custom_script %}
+    <!-- END: Page JS-->
+
+    {% block custom_script %}
     
      {% endblock custom_script %}
-    
-     <!-- END: Content-->
-
-    <!-- END: Page JS-->
 
 </body>
 <!-- END: Body-->
