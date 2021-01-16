@@ -30,7 +30,7 @@ def dash_board(request):
 
 
 def sponsor_reports(request):
-    return render(request,'users/user_profile/sponsor_reports.html')
+    return render(request,'users/reports/sponsor_reports.html')
 
 def exchange_reports(request):
     return render(request,'users/reports/exchange_reports.html')
@@ -41,3 +41,10 @@ def transfer_reports(request):
 def balance_add(request):
     return render(request,'users/balance/balance_add.html')
 
+
+def balance_withdrow(request):
+    return render(request,'users/balance/balance_withdrow.html')
+
+
+def balance_transfer(request):
+    return render(request,'users/balance/balance_transfar.html')
