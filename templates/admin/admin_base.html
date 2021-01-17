@@ -18,6 +18,7 @@
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/tables/datatable/datatables.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/forms/icheck/icheck.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/forms/icheck/custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/charts/morris.css' %}">
@@ -106,14 +107,22 @@
     <script src="{% static 'app-assets/vendors/js/charts/apexcharts/apexcharts.min.js' %}"></script>
     <!-- END: Page Vendor JS-->
 
+    <script src="{% static 'app-assets/vendors/js/tables/datatable/datatables.min.js' %}"></script>
+
     <!-- BEGIN: Theme JS-->
     <script src="{% static 'app-assets/js/core/app-menu.js' %}"></script>
     <script src="{% static 'app-assets/js/core/app.js' %}"></script>
     <!-- END: Theme JS-->
 
+    <!-- <script src="{% static 'app-assets/js/scripts/tables/datatables/datatable-basic.js' %}"></script> -->
+
     <!-- BEGIN: Page JS-->
-    <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script>
+    <!-- <script src="{% static 'app-assets/js/scripts/pages/dashboard-fitness.js' %}"></script> -->
     <!-- END: Page JS-->
+
+    {% block custom_script %}
+    
+    {% endblock custom_script %}
 
 </body>
 <!-- END: Body-->

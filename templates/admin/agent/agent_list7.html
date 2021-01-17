@@ -30,29 +30,7 @@
                             <div class="card-body">
                                 <!-- datatable start -->
                                 <div class="table-responsive">
-                                    <div id="users-list-datatable_wrapper"
-                                        class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="dataTables_length" id="users-list-datatable_length">
-                                                    <label>Show <select name="users-list-datatable_length"
-                                                            aria-controls="users-list-datatable"
-                                                            class="custom-select custom-select-sm form-control form-control-sm">
-                                                            <option value="10">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select> entries</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div id="users-list-datatable_filter" class="dataTables_filter">
-                                                    <label>Search:<input type="search"
-                                                            class="form-control form-control-sm" placeholder=""
-                                                            aria-controls="users-list-datatable"></label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <table id="users-list-datatable" class="table dataTable no-footer"
@@ -252,34 +230,7 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-5">
-                                                <div class="dataTables_info" id="users-list-datatable_info"
-                                                    role="status" aria-live="polite">Showing 1 to 10 of 18 entries
-                                                    (filtered from 36 total entries)</div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-7">
-                                                <div class="dataTables_paginate paging_simple_numbers"
-                                                    id="users-list-datatable_paginate">
-                                                    <ul class="pagination">
-                                                        <li class="paginate_button page-item previous disabled"
-                                                            id="users-list-datatable_previous"><a href="#"
-                                                                aria-controls="users-list-datatable" data-dt-idx="0"
-                                                                tabindex="0" class="page-link">Previous</a></li>
-                                                        <li class="paginate_button page-item active"><a href="#"
-                                                                aria-controls="users-list-datatable" data-dt-idx="1"
-                                                                tabindex="0" class="page-link">1</a></li>
-                                                        <li class="paginate_button page-item "><a href="#"
-                                                                aria-controls="users-list-datatable" data-dt-idx="2"
-                                                                tabindex="0" class="page-link">2</a></li>
-                                                        <li class="paginate_button page-item next"
-                                                            id="users-list-datatable_next"><a href="#"
-                                                                aria-controls="users-list-datatable" data-dt-idx="3"
-                                                                tabindex="0" class="page-link">Next</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <!-- datatable ends -->
@@ -294,3 +245,14 @@
 </div>
 
 {% endblock %}
+
+
+{% block custom_script %}
+    <script>
+        
+        $(document).ready(function() {
+            $("#users-list-datatable").DataTable();
+        })
+       
+    </script>
+{% endblock custom_script %}
