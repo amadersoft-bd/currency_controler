@@ -3,21 +3,49 @@
 
 {% block content %}
 
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-        <div class="content-overlay"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <!-- Winner Card Design start -->
+            <div class="row justify-content-center  pt-2 ">
+                <div class="col-sm-3 mx-2">
+                    <div class="rounded-lg card " style="height: auto;">
+                        <div class="pb-1 card-content text-center">
+                            <img src="{% static 'app-assets/images/slider/18399-removebg-preview.png' %}" alt="Lights"
+                                width="70%" height="70%">
+                            <div class="card-body">
+                                <h4 style="line-height: 0.3; color: rgb(250, 152, 25);" class="card-title">Congrats!!
+                                </h4>
+                                <h7 style="  line-height: 0.3;"> Today Primium Winner </h7>
+                                <p class="card-text"> Jhon Smith </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mx-2">
+                    <div class="rounded-lg card " style="height: auto;">
+                        <div class="pb-1 card-content text-center">
+                            <img src="{% static 'app-assets/images/slider/18399-removebg-preview.png' %}" alt="Lights"
+                                width="70%" height="70%">
+                            <div class="card-body">
+                                <h4 style="line-height: 0.3; color: rgb(250, 152, 25);" class="card-title">Congrats!!
+                                </h4>
+                                <h7 style="  line-height: 0.3;"> Today Primary Winner </h7>
+                                <p class="card-text"> Jhon Smith </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="content-body">
+            <!-- Winner Card Design ends -->
 
-                Design is upcomming
-               
-
-
-            </div>
         </div>
     </div>
-    <!-- END: Content-->
+</div>
+<!-- END: Content-->
 
 {% endblock content %}
