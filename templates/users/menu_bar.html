@@ -47,9 +47,12 @@
                    
                 </ul>
             </li>
-            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-layout"></i><span data-i18n="Layouts">Stairs</span></a>
-                
-            </li>
+           {% if usertype == 'user' %}
+                <li class="dropdown nav-item" data-menu="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">
+                    <i class="feather icon-layout"></i><span data-i18n="Layouts">Stairs</span></a>
+                </li>
+            {% endif %}
             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-box"></i><span data-i18n="Apps">Transactions</span></a>
                 <ul class="dropdown-menu">
                     <li data-menu=""><a class="dropdown-item" href="{% url 'balance_add' %}" data-i18n="Email Application" data-toggle="dropdown"> Balance Add</a>

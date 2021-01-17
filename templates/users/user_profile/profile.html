@@ -14,7 +14,7 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                width: 35%;
+                width: 15%;
               "
               src="{{ profile.photo.url }}"
               class="rounded-circle height-160"
@@ -22,27 +22,49 @@
             />
           </div>
           <div class="card-body container-fluid">
-            <h3 class="card-title text-center">{{user.profile.full_name}} {{profile.full_name}}</h3>
+            <h3 class="card-title text-center">{{ usertype }}</h3>
             <div class="row">
-              <div class="col-lg-2 col-md-2"></div>
-           {% if user.is_authenticated %}
-              <div class="col-lg-4 col-md-4 col-sm-12">
-                <h6 id="user_tpye">{{ usertype }}</h6>
-                <h6 id="user_id">{{profile.full_name}}</h6>
-                <h6 id="user_tpye">{{profile.address}}</h6>
-                <h6 id="user_tpye">{{profile.mobile_no}}</h6>
-                <h6 id="user_id">{{profile.tnx_no}}</h6>
-                <h6 id="user_tpye">{{profile.email}}</h6>
-              </div>
-              <div class="col-lg-1 col-md-1"></div>
-              <div class="col-lg-4 col-md-4 col-sm-12">
-                <h6 id="user_id">{{user.profile.mobile_no}}</h6>
-                <h6 id="user_tpye">{{user.profile.address}},{{user.profile.country}}</h6>
-                <h6 id="user_id">{{user.profile.country}}</h6>
-                <h6 id="tnx_number">{{user.profile.tnx_no}}</h6>
-              </div>
-               {% endif %} 
-            </div>
+              <table class="table table-xl mb-0">
+                <thead>
+                    <tr>
+                      <th>Full Name</th>
+                      <td>{{ profile.full_name }}</td>
+                      <th>Mobile</th>
+                      <td>{{ profile.mobile_no }}</td>
+                         
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Country</th>
+                        <td>{{ profile.country }}</td>
+                        <th>Divistion</th>
+                        <td>{{ profile.division }}</td>
+                    </tr>
+                    <tr>
+                      <th>District</th>
+                      <td>{{ profile.district }}</td>
+                      <th>Address</th>
+                      <td>{{ profile.address }}</td>
+                        
+                    </tr>
+                    <tr>
+                      <th>Account Created On</th>
+                      <td>{{ profile.created_date }}</td>
+                      <th>Birth Date</th>
+                      <td>{{ profile.birth_date }}</td>
+                        
+                    </tr>
+                    <tr>
+                      <th>Updated Date</th>
+                      <td>{{ profile.updated_date }}</td>
+                      <th>BTC Address</th>
+                      <td>{{ profile.BTCAddress }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+ 
           </div>
         </div>
       </div>

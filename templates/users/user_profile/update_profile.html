@@ -31,37 +31,43 @@
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-name">User Name</label>
                                                         <input type="text" class="form-control" id="user-name"
-                                                           value="{{user.username}}" name="username" placeholder="User Name">
+                                                           value="{{user.username}}" name="username" placeholder="User Name" disabled="">
                                                     </fieldset>
                                                     <!-- User Full Name -->
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-type">Full Name</label>
                                                         <input type="text" class="form-control" id="full-name"
-                                                          name="full_name" value="{{user.profile.full_name}}" placeholder="Full name">
+                                                          name="full_name" value="{{ profile.full_name}}" placeholder="Full name" disabled="">
                                                     </fieldset>
                                                   <!-- Birth Date -->
                                                     <fieldset class="form-group floating-label-form-group">
-                                                        <label for="user-type">Birth Date</label>
-                                                         <input type="date" id="birthday" name="birth_date">
+                                                        <label for="user-type">Birth Date : </label>
+                                                        <span> {{ profile.birth_date }}</span>
+                                                         <input type="date" class="form-control" id="birthday" name="birth_date">
                                                     </fieldset>
                                                     <!-- User photo  -->
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-type">User Photo</label>
+                                                        <img src="{{ profile.photo.url }}" width="100px" style="border-radius: 50%;" />
                                                          <input type="file" id="img" name="photo" accept="image/*">
                                                     </fieldset>
                                                     <!-- User package  -->
-                                                    <fieldset class="form-group floating-label-form-group">
+                                                   {% if usertype == 'user' %}
+                                                   <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-member-pakage">Member Pakage </label>
                                                         <input type="text" class="form-control" id="member-pakage"
-                                                           value="{{user.profile.package_id}}" placeholder="Member Pakage">
-                                                    </fieldset>
-                                                    <!-- Sponsor Name  -->
-                                                    <fieldset class="form-group floating-label-form-group">
-                                                        <label for="user-sponsor">Sponsor</label>
-                                                        <input type="text" class="form-control" id="sponsor"
-                                                            placeholder="Sponsor">
+                                                        value="{{ profile.package_id}}" placeholder="Member Pakage">
                                                     </fieldset>
 
+                                                     <!-- Sponsor Name  -->
+                                                     <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-sponsor">Sponsor</label>
+                                                        <input type="text" value="{{ profile.sponsor_id }}" class="form-control" id="sponsor"
+                                                            placeholder="Sponsor" disabled="">
+                                                    </fieldset>
+
+                                                   {% endif %}
+                                                   
                                                 </div>
                                                 <div class="col-md-6">
 
@@ -69,27 +75,27 @@
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-email">Your Email Address</label>
                                                         <input type="email" class="form-control" id="user-email"
-                                                           value="{{user.email}}" placeholder="Your Email Address">
+                                                           value="{{ profile.email }}" placeholder="Your Email Address" disabled="">
                                                     </fieldset>
 
                                                     <!-- User Phone Number  -->
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-phone-number">Phone Number</label>
                                                         <input type="number" class="form-control" id="user-number"
-                                                           value="{{user.profile.mobile_no}}" placeholder="User Phone Number ">
+                                                           value="{{ profile.mobile_no }}" placeholder="User Phone Number ">
                                                     </fieldset>
                                                     <!-- Address  -->
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-address-address">Address </label>
                                                         <input type="text" class="form-control" id="user-address"
-                                                          value="{{user.profile.address}}"  placeholder="Address">
+                                                          value="{{ profile.address }}"  placeholder="Address">
                                                     </fieldset>
 
                                                     <!-- Country  -->
                                                     <fieldset class="form-group floating-label-form-group">
                                                         <label for="user-country">Country </label>
                                                         <input type="text" class="form-control" id="user-country"
-                                                           value="{{user.profile.country}}" placeholder="country">
+                                                           value="{{ profile.country }}" placeholder="country" disabled="">
                                                     </fieldset>
                                                 </div>
                                             </div>
