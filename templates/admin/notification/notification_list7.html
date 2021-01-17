@@ -1,0 +1,333 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="alert mb-2" style="background-color: #404E67;">
+            <div class="row breadcrumbs-top">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-white"> Notification List
+                        </li>
+                        <li class="breadcrumb-item ml-auto text-white"><a class="text-white"
+                                href="#"> Add Notifications + </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- users list start -->
+            <section class="users-list-wrapper">
+                <!-- <div class="users-list-filter px-1">
+                    <form>
+                        <div class="row border border-light rounded py-2 mb-2">
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <label for="users-list-verified">Verified</label>
+                                <fieldset class="form-group">
+                                    <select class="form-control" id="users-list-verified">
+                                        <option value="">Any</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <label for="users-list-role">Role</label>
+                                <fieldset class="form-group">
+                                    <select class="form-control" id="users-list-role">
+                                        <option value="">Any</option>
+                                        <option value="User">User</option>
+                                        <option value="Staff">Staff</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <label for="users-list-status">Status</label>
+                                <fieldset class="form-group">
+                                    <select class="form-control" id="users-list-status">
+                                        <option value="">Any</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Close">Close</option>
+                                        <option value="Banned">Banned</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                                <button class="btn btn-block btn-primary glow">Show</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+                <div class="users-list-table-1">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <!-- datatable start -->
+                                <div class="table-responsive">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="users-list-datatable" class="table dataTable no-footer"
+                                                role="grid" aria-describedby="users-list-datatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="id: activate to sort column descending"
+                                                            style="width: 31px;" aria-sort="ascending">User Id</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="username: activate to sort column ascending"
+                                                            style="width: 116px;">Title</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="name: activate to sort column ascending"
+                                                            style="width: 169px;">Details</th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="last activity: activate to sort column ascending"
+                                                            style="width: 123px;">Date </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="verified: activate to sort column ascending"
+                                                            style="width: 85px;">time </th>
+                                                        <th class="sorting" tabindex="0"
+                                                            aria-controls="users-list-datatable" rowspan="1" colspan="1"
+                                                            aria-label="status: activate to sort column ascending"
+                                                            style="width: 72px;">Action</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1">316</td>
+                                                        <td>Gregory Hayden</td>
+                                                        <td>23/09/2019</td>
+                                                        <td>Yes</td>
+                                                        <td>User </td>
+                                                        <td><a href="#"><i class="feather icon-edit-1"></i></a>
+                                                            <a href="#">
+                                                                <i class="feather icon-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- datatable ends -->
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <!-- users list ends -->
+
+        <!-- Add Notification start  -->
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title" id="basic-layout-card-center"> Add Notification</h4>
+                        <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                        <div class="heading-elements">
+                            <ul class="list-inline mb-0">
+                                <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                                <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                                <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                                <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content collapse show">
+                        <div class="card-body">
+                            <form class="form">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label for="eventRegInput2">Title</label>
+                                        <input type="text" id="eventRegInput2" class="form-control" placeholder="title"
+                                            name="title">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="eventRegInput3">Details</label>
+                                        <input type="text" id="eventRegInput3" class="form-control"
+                                            placeholder="Details" name="notification_details">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="eventRegInput4">Date</label>
+                                        <input type="date" id="eventRegInput4" class="form-control" placeholder="Date"
+                                            name="date">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="eventRegInput5">Time</label>
+                                        <input type="time" id="eventRegInput5" class="form-control" name="time"
+                                            placeholder="Time">
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-actions center">
+                                    <button type="reset" class="btn btn-warning mr-1">
+                                        <i class="feather icon-x"></i> Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-check-square-o"></i> Save
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Add Notification Ends  -->
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block custom_script %}
+<script>
+
+    $(document).ready(function () {
+        $("#users-list-datatable").DataTable();
+    })
+
+</script>
+{% endblock custom_script %}

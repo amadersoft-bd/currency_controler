@@ -20,5 +20,5 @@ urlpatterns = [
     path('agent_list7/',views.agent_list7, name='agent_list7'),
     path('new_member7/',views.new_member7, name='new_member7'),
     path('add_member7/',views.add_member7, name='add_member7'),
-
+    path('notification_list7/',views.notification_list7, name='notification_list7'),
     ]
