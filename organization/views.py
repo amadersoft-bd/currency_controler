@@ -48,3 +48,21 @@ def balance_withdrow(request):
 
 def balance_transfer(request):
     return render(request,'users/balance/balance_transfar.html')
+
+
+def new_member7(request):
+    return render(request,'admin/member/new_member7.html')
+
+def holdline_list7(request):
+    return render(request,'admin/member/holdline_list7.html')
+
+def pakage_line_member7(request):
+    return render(request,'admin/member/pakage_line_member7.html')
+
+
+def agent_list7(request):
+    return render(request,'admin/agent/agent_list7.html')
+
+def add_member7(request):
+    return render(request,'admin/member/add_member7.html')
+

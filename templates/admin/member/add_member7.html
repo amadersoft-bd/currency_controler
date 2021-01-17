@@ -1,0 +1,128 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="row flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-7 col-md-8 col-10 p-0">
+                        <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card-header border-0 pb-0">
+                                <div class="card-title text-center">
+                                    
+                                    <img src="{% static 'app-assets/images/logo/stack-logo-dark.png' %}" alt="branding logo">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body pt-3">
+                                    <form class="form-horizontal" action="{% url 'registration' %}" method="POST">
+
+                                    {% csrf_token %}
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <!-- User Name -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-name">User Name</label>
+                                                        <input type="text" class="form-control" id="user-name"
+                                                           name="username" placeholder="User Name">
+                                                    </fieldset>
+                                                    <!-- User Type  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Full Name</label>
+                                                        <input type="text" class="form-control" id="user-type"
+                                                            name="full_name" placeholder="User Type">
+                                                    </fieldset>
+                                                    <!-- User Type  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-member-pakage">Member Pakage </label>
+                                                    
+                                                        <select class="form-control" id="package" name="package_name">
+                                                           {% for p in package_id %}
+    
+                                                                <option value="{{p.id}}">{{p.package_name}}</option>
+                                                            
+                                                                {% endfor %}
+                                                        </select>
+                                                            
+                                                    </fieldset>
+                                                   <!-- User Type  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-type">Sponsor ID</label>
+                                                        <input type="text" class="form-control" id="user-type"
+                                                            name="sponsor_id" placeholder="sponsor ID">
+                                                    </fieldset>
+
+
+                                                    <!-- Sponsor Name  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-Phone">Phone</label>
+                                                        <input type="text" class="form-control" id="phone"
+                                                           name="mobile_no" placeholder="Phone Number">
+                                                    </fieldset>
+                                                    <!-- User Email  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-email">Your Email Address</label>
+                                                        <input type="email" class="form-control" id="user-email"
+                                                          name="email"  placeholder="Your Email Address">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <!-- User Phone Number  -->
+                                                    {% comment %} <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-phone-number">Phone Number</label>
+                                                        <input type="number" class="form-control" id="user-number"
+                                                            placeholder="User Phone Number ">
+                                                    </fieldset> {% endcomment %}
+                                                    <!-- Address  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-address-address">Address </label>
+                                                        <input type="text" class="form-control" id="user-address"
+                                                           name="address" placeholder="Address">
+                                                    </fieldset>
+
+                                                    <!-- Country  -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-country">Country </label>
+                                                        <input type="text" class="form-control" id="user-country"
+                                                          name="country"  placeholder="country">
+                                                    </fieldset>
+                                                    <!-- Password -->
+                                                    <fieldset class="form-group floating-label-form-group">
+                                                        <label for="user-password">Enter Password</label>
+                                                        <input type="password" class="form-control" id="user-password"
+                                                           name="password" placeholder="Enter Password">
+                                                    </fieldset>
+
+                                                    <!-- Password -->
+                                                    <fieldset class="form-group floating-label-form-group  ">
+                                                        <label for="user-password">ReEnter Password</label>
+                                                        <input type="password" class="form-control" id="user-password"
+                                                          name="password2"  placeholder="Enter Password">
+                                                    </fieldset>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-outline-primary btn-block"><i
+                                                class="feather icon-user"></i> Register</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
