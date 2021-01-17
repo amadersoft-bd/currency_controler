@@ -66,3 +66,6 @@ def agent_list7(request):
 def add_member7(request):
     return render(request,'admin/member/add_member7.html')
 
+def notification_list7(request):
+    return render(request,'admin/notification/notification_list7.html')
+
