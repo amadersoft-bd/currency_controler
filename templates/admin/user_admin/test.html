@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<form action="{% url 'test' %}" method="POST">
+ {% csrf_token %}
+  <div class="container">
+
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+   <br>
+    <label for="email"><b>title</b></label>
+    <input type="text" placeholder="Enter tilte" name="title" id="email" required>
+    <br>
+    <label for="email"><b>body</b></label>
+     <input type="text" placeholder="Enter body" name="body" id="email" required>
+        <br>
+    <label >Duration:</label>
+    
+    <input type="date"  name="duration">
+   <br>
+     <select name="status">
+    <option value="True">true</option>
+    <option value="False">false</option>
+    
+  </select>
+
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+  
+
+
+</form>
+
+</body>
+</html>
