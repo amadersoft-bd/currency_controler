@@ -11,20 +11,17 @@ from .forms import InfoProfileForm,ProfileForm
 
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-@login_required
+@login_required(login_url='/profile/login/')
 def profile(request):
 
 	# profile_data = Profile.objects.get(user=request.user)
 	# context = {
 	# 	'profile_data': profile_data,
 	# }
+
 	return render(request, 'users/user_profile/profile.html')
 
-
-
-
-
-
+@login_required(login_url='/profile/login/')
 def update_profile(request):
 	#selected_package = None
 	package_id = Package.objects.all()
@@ -32,7 +29,7 @@ def update_profile(request):
 	if request.method == "POST":
 		
 		try:
-			profile = Profile.objects.get(id=12)
+			profile = Profile.objects.get(id=request.user.id)
 			
 		
 			#user = User.objects.get(username = request.POST['username'],email = request.POST['email'])
@@ -68,13 +65,6 @@ def update_profile(request):
 					}
 		return render(request, 'users/user_profile/update_profile.html',context)
 	
-	
-
-	
-
-
-
-
 
 def registration(request):
 	#selected_package = None
@@ -145,7 +135,7 @@ def login(request):
 	else:
 		return render(request,'users/account/login.html')
 
-
+@login_required(login_url='/profile/login/')
 def logout(request):
 	auth.logout(request)
 	return render(request, 'users/index.html')

@@ -2,6 +2,15 @@ import agent.models
 from .utils import create_new_ref_number
 from django.db import models
 from django.contrib.auth.models import User
+
+
+USER_STATUS_CHOICES = [
+    ("NEW_USER", "new"),
+    ("ON_HOLD", "hold"),
+    ("TOP_HUNDRED", 'tophundred'),
+    ("WINNER", 'winner')
+]
+
 class Package(models.Model):
     package_name = models.CharField(max_length=200,default='primary')
     package_amount = models.FloatField(default=0)
@@ -37,6 +46,9 @@ class Profile(models.Model):
     registration_wallet = models.FloatField(default=0)
     sponsor_wallet = models.FloatField(default=0)
     founder_wallet = models.FloatField(default=0)
+
+    # Some Update: Himel
+    user_current_status = models.CharField(max_length=11, choices=USER_STATUS_CHOICES, default="new")
 
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(null=True,blank=True)

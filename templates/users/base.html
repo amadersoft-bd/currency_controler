@@ -57,8 +57,9 @@
 
     <!-- BEGIN: Main Menu-->
 
-
-    {% include 'users/menu_bar.html' %}
+    {% if user.is_authenticated %}
+         {% include 'users/menu_bar.html' %}
+    {% endif %}
     
 
     <!-- END: Main Menu-->
